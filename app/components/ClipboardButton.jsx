@@ -17,7 +17,7 @@ export default function ClipboardButton({content}) {
         <span className='relative'>
             <button
                 onClick={handleCopy}
-                className=" hover:scale-110 cursor-pointer  relative transition ease-in-out duration-300"
+                className=" hover:scale-110 cursor-pointer relative transition ease-in-out duration-300"
                 aria-label="Copy email to clipboard"
             >
                 <IoCopy className="pb-1" size={30} />
