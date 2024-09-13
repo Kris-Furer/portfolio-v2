@@ -3,7 +3,6 @@ import { MdNavigateNext } from "react-icons/md";
 import Image from 'next/image';
 
 export default function Project({ id, title, subtitle, role, description, imgs, tools, liveLink }) {
-  console.log(imgs);
 
   return (
     <div id={id} className="project my-8 text-white flex flex-col lg:flex-row gap-7  max-w-[2000px] m-auto ">
@@ -37,7 +36,7 @@ export default function Project({ id, title, subtitle, role, description, imgs, 
       {/* Pictures ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
       <div className="project-images lg:w-[70%] lg:py-[100vh] lg:px-16">
         {imgs?.map((image, index) => (
-    <Image key={index} className='py-7' src={`/img/${image.src}`} alt={image.alt}   layout="responsive" width={900} height={600}
+    <Image key={index} className='py-7' src={`/img/${image.src}`} alt={image.alt}  width={900} height={600}
 />
   ))}
 

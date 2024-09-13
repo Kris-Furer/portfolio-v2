@@ -57,11 +57,11 @@ export default function Header() {
                     >
                         <div
                             onClick={handleModalInnerClick}
-                            className="modal-inner flex items-center border border-stone-500 rounded-3xl relative justify-center h-[70%] w-[70%] bg-stone-900"
+                            className="modal-inner flex items-center border border-stone-500 rounded-3xl relative justify-center h-[90%] w-[90%] lg:h-[70%] lg:w-[70%] bg-stone-900"
                         >
                             <div className="modal-content">
                                
-                                <a href="mailto:KrisFurer@gmail.com" className='text-6xl'>KrisFurer@gmail.com</a> <span> <ClipboardButton content="KrisFure@gmail.com"/></span>
+                                <a href="mailto:KrisFurer@gmail.com" className=' text-xl lg:text-6xl'>KrisFurer@gmail.com</a> <span> <ClipboardButton content="KrisFure@gmail.com"/></span>
                                 <IoClose
                                     size={30}
                                     className="absolute top-8 right-8 hover:scale-110 cursor-pointer transition ease-in-out duration-300"
