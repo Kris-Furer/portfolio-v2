@@ -1,9 +1,14 @@
-import React from 'react';
+import { React, useLayoutEffect} from 'react';
+import gsap from 'gsap';
 import { MdNavigateNext } from "react-icons/md";
 import Image from 'next/image';
 
+
+
 export default function Project({ id, title, subtitle, role, description, imgs, tools, liveLink }) {
 
+
+ 
   return (
     <div id={id} className="project my-8 text-white flex flex-col lg:flex-row gap-7  max-w-[2000px] m-auto ">
       {/* Text ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
@@ -12,7 +17,7 @@ export default function Project({ id, title, subtitle, role, description, imgs, 
         <div className="sticky flex gap-5 items-center top-0 left-0 lg:h-lvh">
           <div className="project-text pt-9">
 
-            <p className='ml-1'>{role}</p>
+            <p >{role}</p>
             <h1 className='text-6xl mb-4'>{title}</h1>
             <p className='text-3xl'>{subtitle}</p>
             <p className=' py-3 font-thin' >{description}</p>
