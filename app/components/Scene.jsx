@@ -1,8 +1,8 @@
 'use client';
 
-import { Canvas, useFrame, extend } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Suspense, useRef, useState, useEffect } from 'react';
-import { OrbitControls, ScrollControls, shaderMaterial, MeshWobbleMaterial, MeshDistortMaterial, Float, Sparkles, MeshPhysicalMaterial } from "@react-three/drei";
+import { OrbitControls, ScrollControls, MeshDistortMaterial, Float, Sparkles } from "@react-three/drei";
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,8 +17,8 @@ function MorphingPlane() {
 
         gsap.to(mesh.rotation, {
             y: 1,
-            x:1,
-            z:1, // Final value of rotation
+            x: 1,
+            z: 1, // Final value of rotation
             ease: "none", // Linear easing for smooth animation
             scrollTrigger: {
                 trigger: document.body,
@@ -28,8 +28,8 @@ function MorphingPlane() {
                 onUpdate: (self) => {
                     const progress = self.progress;
                     mesh.rotation.y = progress * Math.PI * .5; // Rotate based on scroll progress
-                    mesh.rotation.x = progress * Math.PI * .3; // Rotate based on scroll progress
-                    mesh.rotation.z = progress * Math.PI * .6; // Rotate based on scroll progress
+                    mesh.rotation.x = progress * Math.PI * .3;
+                    mesh.rotation.z = progress * Math.PI * .6;
                 },
             },
         });
@@ -68,7 +68,29 @@ function MouseFollowLight() {
     return <directionalLight ref={lightRef} intensity={2} color='cyan' />;
 }
 
+function CameraController() {
+    const { camera } = useThree(); // Correctly use useThree to access the camera
 
+    useEffect(() => {
+        gsap.to(camera.position, {
+            z: 10, // Zoom out distance
+            ease: "none",
+            scrollTrigger: {
+                trigger: '#project1',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    camera.position.z = THREE.MathUtils.lerp(3, 10, progress); // Zoom from initial to target
+                },
+            },
+        });
+        
+    }, [camera]); // Make sure to include camera as a dependency
+
+    return null;
+}
 
 export default function Scene() {
     return (
@@ -81,8 +103,6 @@ export default function Scene() {
                 <directionalLight position={[-10, 5, 5]} intensity={2} color='cyan' />
 
                 <Suspense fallback={null}>
-                    {/* Spheres ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
-
                     <Sparkles
                         count={80}
                         speed={3}
@@ -92,20 +112,19 @@ export default function Scene() {
                         position={[0, 0, 0]} // Position them closer to the camera or objects
                     />
 
-
                     <ScrollControls damping={0.2} pages={2}>
-                      
                         <Float speed={1}         // Animation speed
                             rotationIntensity={1} // Intensity of rotation
                             floatIntensity={1}    // Intensity of float
                             floatingRange={[1, 1.5]} >
-                            
                             <MorphingPlane />
                         </Float>
 
                         <OrbitControls enableZoom={false} />
                     </ScrollControls>
                 </Suspense>
+
+                <CameraController /> {/* Include CameraController to manage camera zoom */}
             </Canvas>
         </div>
     );
