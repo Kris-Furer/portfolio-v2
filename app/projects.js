@@ -62,7 +62,7 @@ const projects = [
           "As part of an assignment for Yoobee college I was tasked with re-designing and developing a brochure website for a Surf-break Protection Society."
         ],
         tools: ["HTML", "CSS", "JavaScript", "Photoshop, Adobe XD"],
-        link:"https://kris-furer.github.io/Surfgroove/index.html",
+        link:"https://kris-furer.github.io/surfgroove/index",
         imgs: [{
             src:'surf-1.png',
             alt: 'Website Screenshot'
