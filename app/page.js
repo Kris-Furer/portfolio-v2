@@ -12,6 +12,7 @@ import { useEffect } from "react";
 
 
 export default function Home() {
+  // Smooth scrollling
   useEffect(() => {
     const lenis = new Lenis({
         duration: 1.2, // adjust duration for scroll smoothness
@@ -25,15 +26,15 @@ export default function Home() {
   
     function raf(time) {
         lenis.raf(time);
-        
         requestAnimationFrame(raf);
     }
     
     requestAnimationFrame(raf);
-  
     // Clean up function
     return () => lenis.destroy();
   }, []);
+
+  
   return (
     <div className="m-7 text-white">
       <Header />

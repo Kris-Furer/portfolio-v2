@@ -18,7 +18,10 @@ body {
   background-color: #101010;
 
 }
-
+.landing-text {
+  font-size: clamp(1.875rem, -0.2235rem + 10.4927vw, 12.63rem);
+  
+}
 canvas {
   min-height: 100vh;
   background-color: #101010;
@@ -27,7 +30,7 @@ canvas {
 .canvas-wrap {
   z-index: -1;
   position: fixed;
-  inset: 0 0 0 0;
+  inset: 35px 0 0 0;
   min-height: 100vh;
 }
 

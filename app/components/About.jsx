@@ -8,10 +8,16 @@ export default function About() {
   useLayoutEffect(() => {
     gsap.fromTo('.about-text', 
       {
-        opacity: 0       // Starting opacity (invisible initially)
+        opacity: 0,    // Starting opacity (invisible initially)
+        y: 20,          // Starting position (slightly down)
+        scale: 0.90     // Starting scale (slightly smaller)
       }, 
       {
-        opacity: 1,      // Ending opacity (fully visible)
+        opacity: 1,     // Ending opacity (fully visible)
+        y: 0,           // Ending position (original position)
+        scale: 1,       // Ending scale (original size)
+        duration: 1,    // Duration of the animation
+        ease: "power2.out", // Easing function for smoothness
         scrollTrigger: {
           trigger: '.about-section',
           start: 'top center', // Customize as needed
@@ -20,10 +26,8 @@ export default function About() {
         }
       }
     );
- 
-    
-    
   }, []);
+  
 
   return (
     <div className='min-h-lvh flex items-center about-section'>

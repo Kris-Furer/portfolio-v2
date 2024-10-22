@@ -1,37 +1,51 @@
-import {React, useLayoutEffect} from 'react'
+import { React, useLayoutEffect } from 'react'
 import gsap from 'gsap';
 
 export default function () {
 
   useLayoutEffect(() => {
-    gsap.to('.landing-text', {
-      backgroundPosition: '100% 0',
-      duration: 2,
-      repeat: -1,
-      ease: 'linear',
-    });
-
-
-    gsap.fromTo('canvas', 
+    // Scale animation for canvas
+    gsap.fromTo('canvas',
+      { scale: .6 },
       {
-        scale: .6, // Starting scale
-      },
-      {
-        scale: 1, // Default scale
+        scale: 1,
         scrollTrigger: {
           trigger: ".landing-section",
-          start: "top top", // When .landing-section hits the top of the viewport
-          end: "bottom top", // When the bottom of .landing-section hits the top
-          scrub: true, // Smooth scroll-based animation
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
         }
       });
+
+    // Timeline for initial text opacity and position
+    gsap.timeline()
+      .fromTo('.landing-text',
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.6,
+          ease: "power3.out",
+          stagger: 0.2,
+        });
+
+    // Looping color animation for subtle shade changes
+    gsap.to('.landing-text', {
+      color: 'rgb(240, 240, 240)', // Subtle lighter shade
+      repeat: -1, // Infinite loop
+      yoyo: true, // Reverse the animation back and forth
+      duration: 2, // Smooth transition over 2 seconds
+      ease: "none", // Linear, smooth animation
+    });
+
   }, []);
 
   return (
     <div className='min-h-lvh flex landing-section items-center'>
-        <div>
-        <h1 className='text-4xl landing-text lg:text-9xl text-white'>Design | Development</h1>
-        </div>
+      <div>
+        <h1 className='landing-text text-white'>Design &</h1>
+        <h1 className='text-4xl landing-text text-white'>Development</h1>
+      </div>
     </div>
-  )
+  );
 }

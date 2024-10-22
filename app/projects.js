@@ -19,6 +19,26 @@ const projects = [
       }]
     },
     {
+      title: "Gecko Gecko",
+      subtitle: "Landing Page",
+      role:"UX Design",
+      description: [
+        "I designed and developed a minimal, brutalist landing page for my music project to promote a single release. The project features both dark and light mode options, focusing on bold typography and a clean, straightforward layout that draws attention to the music. You can't see this one live yet, but feel free to listen!"
+      ],
+      tools: ["Figma", "Photoshop"],
+      link:"https://push.fm/fl/TED0ZiYo",
+      imgs: [{
+          
+          src:'gg-display-dark.jpeg',
+          alt: 'screenshot of a landing page',
+          link:'https://push.fm/fl/TED0ZiYo'
+      }, {
+        src:'gg-display.jpeg',
+        alt: 'screenshot of a landing page',
+        link:'https://push.fm/fl/TED0ZiYo'
+      }]
+    },
+    {
       title: "Masterton Builders",
       subtitle: "Custom Wordpress Theme",
       role:"Design | Development",
