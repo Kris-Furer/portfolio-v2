@@ -22,7 +22,7 @@ export default function About() {
           trigger: '.about-section',
           start: 'top center', // Customize as needed
           end: 'center center',  // Customize as needed
-          scrub: true,        // Smooth scroll-linked animation
+          scrub: 1,        // Smooth scroll-linked animation
         }
       }
     );

@@ -19,7 +19,8 @@ body {
 
 }
 .landing-text {
-  font-size: clamp(1.875rem, -0.2235rem + 10.4927vw, 12.63rem);
+  font-size: clamp(1.25rem, 1.5rem + 10vw, 20rem);
+  line-height: .9;
   
 }
 canvas {

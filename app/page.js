@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 
 export default function Home() {
-  // Smooth scrollling
+  // Slooth
   useEffect(() => {
     const lenis = new Lenis({
         duration: 1.2, // adjust duration for scroll smoothness
@@ -20,9 +20,7 @@ export default function Home() {
         smooth: true,
     });
   
-    lenis.on('scroll', (e) => {
-        console.log('scrolling', e);
-    });
+   
   
     function raf(time) {
         lenis.raf(time);

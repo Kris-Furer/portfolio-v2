@@ -18,8 +18,7 @@ export default function () {
       });
 
     // Timeline for initial text opacity and position
-    gsap.timeline()
-      .fromTo('.landing-text',
+    gsap.fromTo('.landing-text',
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -43,8 +42,9 @@ export default function () {
   return (
     <div className='min-h-lvh flex landing-section items-center'>
       <div>
-        <h1 className='landing-text text-white'>Design &</h1>
-        <h1 className='text-4xl landing-text text-white'>Development</h1>
+        <h1 className='text-4xl landing-text text-white'>Creative</h1>
+        <h1 className='text-4xl landing-text text-white'>Code &</h1>
+        <h1 className='text-4xl landing-text text-white'>Design</h1>
       </div>
     </div>
   );
