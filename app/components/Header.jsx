@@ -36,8 +36,9 @@ export default function Header() {
     return (
         <header className='text-white p-5 py-4 w-full fixed z-20 top-0 left-0 border-b border-white'>
             <nav className='flex items-center justify-between'>
-                <div>
-                    <a href="/"><h1 className="text-2xl">Kris Furer</h1></a>
+                <div className="flex logo items-center gap-4">
+                    <a href="/"><img src="/img/logo.svg" alt="logo" /></a>
+                    <a href="/"><h1 className="text-2xl font-display">Kris Furer</h1></a>
                 </div>
                 <div className='flex items-center gap-x-6'>
                     <a href="#projects">Projects</a>
@@ -60,8 +61,8 @@ export default function Header() {
                             className="modal-inner flex items-center border border-stone-500 rounded-3xl relative justify-center h-[90%] w-[90%] lg:h-[70%] lg:w-[70%] bg-stone-900"
                         >
                             <div className="modal-content">
-                               
-                                <a href="mailto:KrisFurer@gmail.com" className=' text-xl lg:text-6xl'>KrisFurer@gmail.com</a> <span> <ClipboardButton content="KrisFure@gmail.com"/></span>
+
+                                <a href="mailto:KrisFurer@gmail.com" className=' text-xl lg:text-6xl'>KrisFurer@gmail.com</a> <span> <ClipboardButton content="KrisFure@gmail.com" /></span>
                                 <IoClose
                                     size={30}
                                     className="absolute top-8 right-8 hover:scale-110 cursor-pointer transition ease-in-out duration-300"

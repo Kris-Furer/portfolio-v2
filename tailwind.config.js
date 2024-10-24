@@ -6,6 +6,10 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      "display": "var(--display-font)",
+      "body": "var(--body-font)",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -16,3 +20,4 @@ module.exports = {
   },
   plugins: [],
 };
+  

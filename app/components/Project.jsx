@@ -11,7 +11,7 @@ export default function Project({ id, title, subtitle, role, description, imgs, 
   // Fade in the project text
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(`#${id} .project-text`, {
+      const animation = gsap.fromTo(`#${id} .project-text`, {
         opacity: 0,
         y: 50,
         scale: 0.95, 
@@ -25,22 +25,24 @@ export default function Project({ id, title, subtitle, role, description, imgs, 
           trigger: `#${id} .project-text`,
           start: "top bottom",
           end: "bottom center-=100",
-          scrub:true,
+          scrub: true,
+         
         },
       });
+      
     });
-  });
-  
+
+    return () => ctx.revert();
+  }, [id]);
 
   return (
     <div id={id} className="project my-8 text-white flex flex-col lg:flex-row gap-7  max-w-[2000px] m-auto ">
       {/* Text ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
-
       <div className="sticky-container relative lg:w-[30%]">
         <div className="sticky flex gap-5 items-center top-0 left-0 lg:h-lvh">
           <div className="project-text pt-9">
-            <p>{role}</p>
-            <h1 className='text-6xl mb-4'>{title}</h1>
+            <p className='pl-1'>{role}</p>
+            <h1 className='text-6xl mb-4 mt-2'>{title}</h1>
             <p className='text-3xl'>{subtitle}</p>
             <p className=' py-3 font-thin'>{description}</p>
             <p>

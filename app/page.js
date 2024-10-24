@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div className="m-7 text-white">
       <Header />
-      <main className="">
+      <main >
         <Scene />
         <Landing />
         <About />
