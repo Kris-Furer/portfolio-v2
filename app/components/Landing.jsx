@@ -5,17 +5,26 @@ export default function () {
 
   useLayoutEffect(() => {
     // Scale animation for canvas
-    gsap.fromTo('canvas',
-      { scale: .6 },
-      {
-        scale: 1,
-        scrollTrigger: {
-          trigger: ".landing-section",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        }
-      });
+   // Scroll-triggered animation for clip-path and scale
+gsap.fromTo(
+  "canvas",
+  {
+    scale: 0.6,
+    clipPath: "circle(0% at 50% 50%)", // Start completely hidden
+  },
+  {
+    scale: 1,
+    clipPath: "circle(110% at 50% 50%)", // End fully visible circle
+    scrollTrigger: {
+      trigger: ".landing-section",
+      start: "top top",
+      end: "center top",
+      scrub: true,
+    }
+  }
+);
+
+
 
     // Timeline for initial text opacity and position
     gsap.fromTo('.landing-text',
@@ -28,23 +37,16 @@ export default function () {
           stagger: 0.2,
         });
 
-    // Looping color animation for subtle shade changes
-    gsap.to('.landing-text', {
-      color: 'rgb(240, 240, 240)', // Subtle lighter shade
-      repeat: -1, // Infinite loop
-      yoyo: true, // Reverse the animation back and forth
-      duration: 2, // Smooth transition over 2 seconds
-      ease: "none", // Linear, smooth animation
-    });
+  
 
   }, []);
 
   return (
-    <div className='min-h-lvh flex landing-section items-center'>
-      <div>
-        <h1 className='text-4xl landing-text text-white'>Creative</h1>
-        <h1 className='text-4xl landing-text text-white'>Code &</h1>
-        <h1 className='text-4xl landing-text text-white'>Design</h1>
+    <div className='min-h-lvh relative landing-section '>
+      <div className='landing-text sticky'>
+        <h1 className='text-4xl  text-white'>Creative</h1>
+        <h1 className='text-4xl  text-white'>Code &</h1>
+        <h1 className='text-4xl  text-white'>Design</h1>
       </div>
     </div>
   );

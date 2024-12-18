@@ -34,14 +34,13 @@ export default function Header() {
     }, [openModal]);
 
     return (
-        <header className='text-white p-5 py-4 w-full fixed z-20 top-0 left-0 border-b border-white'>
+        <header className='text-white p-5 py-4 w-full fixed z-20 top-0 left-0 border-b border-white '>
             <nav className='flex items-center justify-between'>
                 <div className="flex logo items-center gap-4">
                     <a href="/"><img src="/img/logo.svg" alt="logo" /></a>
                     <a href="/"><h1 className="text-2xl font-display">Kris Furer</h1></a>
                 </div>
                 <div className='flex items-center gap-x-6'>
-                    <a href="#projects">Projects</a>
                     <button
                         onClick={() => setOpenModal(true)}
                         className="border border-white rounded-full p-2 px-7 hover:bg-white hover:text-black transition ease-in-out duration-300"
@@ -54,7 +53,7 @@ export default function Header() {
                 openModal && (
                     <div ref={modalRef}
                         onClick={handleClose}
-                        className={`modalWrap rounded-md fixed flex items-center top-0 left-0 bg-stone-950 bg-opacity-70 w-full h-lvh justify-center ${openModal ? 'show' : ''}`}
+                        className={`modalWrap rounded-md fixed flex items-center top-0 left-0 bg-stone-950 bg-opacity-50 w-full h-lvh justify-center ${openModal ? 'show' : ''}`}
                     >
                         <div
                             onClick={handleModalInnerClick}

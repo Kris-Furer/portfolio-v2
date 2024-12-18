@@ -3,6 +3,8 @@ import dynamic from "next/dynamic";
 import Project from "./components/Project";
 import Landing from "./components/Landing";
 import Header from "./components/Header";
+import CustomCursor from "./components/CustomCursor";
+
 import About from "./components/About"
 const Scene = dynamic(() => import("./components/Scene"))
 import projects from "./projects";
@@ -30,11 +32,15 @@ export default function Home() {
     requestAnimationFrame(raf);
     // Clean up function
     return () => lenis.destroy();
+
+    
   }, []);
 
   
   return (
     <div className="m-7 text-white">
+      <CustomCursor />
+
       <Header />
       <main >
         <Scene />

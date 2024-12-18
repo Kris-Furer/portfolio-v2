@@ -28,6 +28,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className={` ${unbounded.variable} ${outfit.variable} `} lang="en">
+            
+
       <body className="font-body">
         {children}
         <script
