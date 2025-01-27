@@ -1,48 +1,42 @@
-"use client"
+"use client";
 import dynamic from "next/dynamic";
 import Project from "./components/Project";
 import Landing from "./components/Landing";
 import Header from "./components/Header";
 import CustomCursor from "./components/CustomCursor";
 
-import About from "./components/About"
-const Scene = dynamic(() => import("./components/Scene"))
+import About from "./components/About";
+const Scene = dynamic(() => import("./components/Scene"));
 import projects from "./projects";
 import Footer from "./components/Footer";
 import Lenis from "lenis";
 import { useEffect } from "react";
 
-
 export default function Home() {
   // Slooth
   useEffect(() => {
     const lenis = new Lenis({
-        duration: 1.2, // adjust duration for scroll smoothness
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // custom easing function
-        smooth: true,
+      duration: 1.2, // adjust duration for scroll smoothness
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // custom easing function
+      smooth: true,
     });
-  
-   
-  
+
     function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
-    
+
     requestAnimationFrame(raf);
     // Clean up function
     return () => lenis.destroy();
-
-    
   }, []);
 
-  
   return (
     <div className="m-7 text-white">
       <CustomCursor />
 
       <Header />
-      <main >
+      <main>
         <Scene />
         <Landing />
         <About />
@@ -59,16 +53,11 @@ export default function Home() {
               imgs={project.imgs}
               tools={project.tools}
               liveLink={project.link}
-
             />
           ))}
         </div>
-
-
-
       </main>
       <Footer />
     </div>
-
   );
 }
