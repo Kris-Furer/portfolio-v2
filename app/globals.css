@@ -9,34 +9,43 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
 * {
   scroll-behavior: smooth;
 }
+
 header {
   background-color: var(--light-black-transparent);
 }
 
 body {
-  cursor: none; /* Hide the default cursor */
+  cursor: none;
+  /* Hide the default cursor */
 }
 
 .custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px; /* Circle size */
+  width: 20px;
+  /* Circle size */
   height: 20px;
   background-color: white;
   border-radius: 50%;
-  pointer-events: none; /* Ensure the cursor doesn't block interactions */
-  z-index: 9999; /* Ensure it's above other elements */
-  mix-blend-mode: difference; /* Optional for better contrast */
-  transform: translate(-50%, -50%); /* Center the circle on the pointer */
+  pointer-events: none;
+  /* Ensure the cursor doesn't block interactions */
+  z-index: 9999;
+  /* Ensure it's above other elements */
+  mix-blend-mode: difference;
+  /* Optional for better contrast */
+  transform: translate(-50%, -50%);
+  /* Center the circle on the pointer */
 }
 
 body {
   background-color: var(--light-black);
 }
+
 .landing-section {
   height: 175vh;
 }
@@ -44,6 +53,7 @@ body {
 .landing-text {
   top: 30vh;
   padding-bottom: 30vh;
+
   h1 {
     font-size: clamp(1.25rem, 1.5rem + 10vw, 20rem);
     line-height: 0.9;
@@ -51,14 +61,15 @@ body {
 }
 
 canvas {
-  width: 100%; /* Full width */
-  min-height: 100vh; /* Full height */
+  
+  min-height: 100vh;
   background-color: var(--light-black);
   filter: blur(200px) brightness(80%);
   overflow: hidden;
 }
 
 .canvas-wrap {
+  width: 100vw;
   z-index: -1;
   position: fixed;
   inset: 0 0 0 0;

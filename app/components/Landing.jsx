@@ -21,7 +21,7 @@ export default function () {
       }
     );
 
-    // Timeline for initial text opacity and position
+   
     gsap.fromTo(
       ".landing-text",
       { opacity: 0, y: 30 },

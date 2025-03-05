@@ -136,7 +136,7 @@ function MouseFollowLight() {
 
   useFrame(() => {
     if (lightRef.current) {
-      lightRef.current.position.set(mouse.x * 10, mouse.y * 10, 10); // Adjust multiplier as needed
+      lightRef.current.position.set(mouse.x * 10, mouse.y * 10, 10); 
     }
   });
 
