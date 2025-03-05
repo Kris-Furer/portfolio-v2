@@ -84,9 +84,10 @@ export default function Project({
             className="my-7 bg-gray-700 bg-opacity-60 "
             src={`/img/${image.src}`}
             alt={image.alt}
-            width={1000}
-            height={600}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (min-width: 1024px) 70vw" 
+            width={1300}
+            height={700}
+            
+            sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, (max-width: 1024px) 1000px, 1300px"
           />
         ))}
       </div>
