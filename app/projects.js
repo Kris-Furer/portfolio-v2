@@ -4,7 +4,7 @@ const projects = [
     title: "DAGI",
     subtitle: "Parasite Managment",
     description: [
-      "I designed and developed a marketing site for an ag-tech startup focused on parasite management. To give the client greater flexibility and ease in managing their content post-handover, I opted for a headless CMS solution. Rather than using a traditional CMS, I chose Payload for its streamlined, flexible experience, which allowed me to expand my skillset while delivering a user-friendly platform for the client"
+      "I designed and developed a marketing site for an ag-tech startup focused on parasite management. To give the client greater flexibility and ease in managing their content post-handover, I opted for a headless CMS solution. Rather than using a traditional CMS, I chose Payload for its streamlined, flexible experience, which allowed me to expand my skillset while delivering a user-friendly platform for the client."
     ],
     role:"Design | Development",
     tools: ["NextJs", "TailwindCSS", "Typescript", "PayloadCMS", "Figma"],
